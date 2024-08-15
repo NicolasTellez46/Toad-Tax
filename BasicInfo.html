@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tax Website</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img style="float: left;" src="images/ToadTAX.JPG" height="75" width="100">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="BasicInfo.html">Calculate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+	    </ul>
+        </nav>
+    </header>
+
+   <!--Author: Elex Weisman; Date Modified: 05/19/2024-->
+    <main>
+        <div class="dropdown">
+            <h3 class="dropdown-toggle" onclick="toggleDropdown(this)">Basic Inforamtion</h3>
+            <div class="dropdown-content">
+                <article id="dropdownContentBC">
+                    <div>
+                        <label for="firstName">First Name and Middle Initial: </label>
+                        <input type="name" class="form-control" id="firstName" required>
+                    </div><br>
+                    <div>
+                        <label for="lastName">Last Name: </label>
+                        <input type="name" class="form-control" id="lastName" required>
+                    </div><br>
+                    <div>
+                        <label for="address">Home address (number and street): </label>
+                        <input type="text" class="form-control" id="address" required>
+                        <label for="apt">Apartment or PO Box Number: </label>
+                        <input type="text" class="form-control" id="apt">
+                    </div><br>
+                    <div>
+                        <label for="city">City, Town, or Post Office: </label>
+                        <input type="name" class="form-control" id="city" required>
+                    </div><br>
+                    <div>
+                        <label for="ZIP"> Zip Code: </label>
+                        <input type="number" class="form-control" id="ZIP" required>
+                    </div><br>
+                    <div>
+                        <label for="state">State: </label>
+                        <select name="state" id="state" required>
+                            <option value="none" selected disabled hidden>Select an Option</option>
+                            <option value="AL">AL</option>
+                            <option value="AK">AK</option>
+                            <option value="AR">AR</option>
+                            <option value="AZ">AZ</option>
+                            <option value="CA">CA</option>
+                            <option value="CO">CO</option>
+                            <option value="CT">CT</option>
+                            <option value="DC">DC</option>
+                            <option value="DE">DE</option>
+                            <option value="FL">FL</option>
+                            <option value="GA">GA</option>
+                            <option value="HI">HI</option>
+                            <option value="IA">IA</option> 
+                            <option value="ID">ID</option>
+                            <option value="IL">IL</option>
+                            <option value="IN">IN</option>
+                            <option value="KS">KS</option>
+                            <option value="KY">KY</option>
+                            <option value="LA">LA</option>
+                            <option value="MA">MA</option>
+                            <option value="MD">MD</option>
+                            <option value="ME">ME</option>
+                            <option value="MI">MI</option>
+                            <option value="MN">MN</option>
+                            <option value="MO">MO</option>
+                            <option value="MS">MS</option>
+                            <option value="MT">MT</option>
+                            <option value="NC">NC</option>
+                            <option value="NE">NE</option>
+                            <option value="NH">NH</option>
+                            <option value="NJ">NJ</option>
+                            <option value="NM">NM</option>
+                            <option value="NV">NV</option>
+                            <option value="NY">NY</option>
+                            <option value="ND">ND</option>
+                            <option value="OH">OH</option>
+                            <option value="OK">OK</option>
+                            <option value="OR">OR</option>
+                            <option value="PA">PA</option>
+                            <option value="RI">RI</option>
+                            <option value="SC">SC</option>
+                            <option value="SD">SD</option>
+                            <option value="TN">TN</option>
+                            <option value="TX">TX</option>
+                            <option value="UT">UT</option>
+                            <option value="VT">VT</option>
+                            <option value="VA">VA</option>
+                            <option value="WA">WA</option>
+                            <option value="WI">WI</option>
+                            <option value="WV">WV</option>
+                            <option value="WY">WY</option>
+                        </select>
+                    </div><br>
+                    <div class="form-group">
+                        <label for="status">Select a Status: </label>
+                        <select name="status" id="status" required>
+                            <option value="none" selected disabled hidden>Select an Option</option>
+                            <option value="Single">Single</option>
+                            <option value="HOH">Head of Household</option>
+                            <option value="MFJ">Married Filling Jointly</option>
+                            <option value="MFS">Married Filling Seperately</option>
+                            <option value="QSS">Qualifying Surviving Spouse</option>
+
+                        </select>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown">
+            <h3 id="toggleButtonSSI" onclick="toggleDropdown(this)">Social Security Information</h3>
+            <div class="dropdown-content">
+                <article id="dropdownContentSSI">
+                    <div class="form-group">
+                        <div>
+                            <label for="mainSSN">Your Social Security Number: </label>
+                            <input type="number" class="form-control" id="mainSSN" required>
+                        </div><br>
+                        <div>
+                            <label for="spouseSSN"> Spouse's Social Security Number (Enter if Filling With a Spouse): </label>
+                            <input type="number" class="form-control" id="spouseSSN">
+                        </div><br>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown">
+            <h3 id="toggleButtonW2" onclick="toggleDropdown(this)">W-2 Information</h3>
+            <div class="dropdown-content">
+                <article id="dropdownContentW2">
+                    <div class="form-group">
+                        <div>
+                            <label for="totalAmount"> Total amount from Form(s) W-2, box 1:</label>
+                            <input type="number" id="totalAmount" placeholder="0.00" required>
+                        </div><br>
+                        <div>
+                            <label for="nrWage">Household employee wages not reported on Form(s) W-2:</label>
+                            <input type="number" id="nrWage" placeholder="0.00" required>
+                        </div><br>
+                        <div>
+                            <label for="nrTips">Tip income not reported on on Form(s) W-2:</label>
+                            <input type="number" id="nrTips" placeholder="0.00" required>
+                        </div><br>
+                        <div>
+                            <label for="nrMedicare">Medicaid waiver payments not reported on Form(s) W-2:</label>
+                            <input type="number" id="nrMedicare" placeholder="0.00" required>
+                        </div><br>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown">
+            <h3 id="toggleButton1099" onclick="toggleDropdown(this)">1099 Information</h3>
+            <div class="dropdown-content">
+                <article id="dropdownContent1099">
+                    <div class="form-group">
+                        <div>
+                            <br>
+                            <label for="taxInterest">Taxable interest from Form 1099:</label>
+                            <input type="number" id="taxInterest" placeholder= "0.00" >
+                        </div>
+                        <div>
+                            <br>
+                            <label for="dividends">Ordinary dividends from Form 1099:</label>
+                            <input type="number" id="dividends" placeholder= "0.00" >
+                        </div>
+                        <div>
+                            <br>
+                            <label for="taxIRA">Taxable amount of IRA Distributions from Form 1099:</label>
+                            <input type="number" id="taxIRA" placeholder= "0.00" >
+                        </div>
+                        <div>
+                            <br>
+                            <label for="taxPension">Taxable amount of Pensions and annuities from Form 1099:</label>
+                            <input type="number" id="taxPension" placeholder= "0.00" >
+                            
+                        </div>
+                        <div>
+                        <br>
+                        <label for="taxSS">Taxable amount of social security benefits from Form SSA-1099 Box 3/4:</label>
+                        <input type="number" id="taxSS" placeholder= "0.00" >
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown">
+            <h3 id="toggleButtonSI" onclick="toggleDropdown(this)">Schedule Information</h3>
+            <div class="dropdown-content">
+                <article id="dropdownContentSI">
+                    <div class="form-group">
+                        <div>
+                            <label for="additionalInc">Any additional income from Form Scedule 1, line 10:</label>
+                            <input type="number" id="additionalInc" placeholder= "0.00">
+                        </div>
+                        <div>
+                            <br>
+                            <label for="adjustments">Adjustments to income from Schedule 1, line 26:</label>
+                            <input type="number" id="adjustments" placeholder= "0.00">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown">
+            <h3 id="toggleButtonOther" onclick="toggleDropdown(this)">Other Information</h3>
+            <div class="dropdown-content">
+                <article id="dropdownContentOI">
+                    <div class="form-group">
+                        <div>
+                            <label for="capGainLoss">Capital Gain or loss (if stock or bond was sold):</label>
+                            <input type="number" id="capGainLoss" placeholder= "0.00">
+                        </div>
+                        <div>
+                            <br>
+                            <label for="foreignEmpComp">Other earned income and Foreign Employer Compensation:</label>
+                            <input type="number" id="foreignEmpComp" placeholder= "0.00">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+        <br>
+        <div class="dropdown">
+            <h3 id="toggleButtonNumbered" onclick="toggleDropdown(this)">Numbered Forms Information</h3>
+            <div class="dropdown-content">
+                <article id="dropdownContentNFI">
+                    <div class="form-group">
+                        <div>
+                            <label for="taxDepCare">Taxable dependent care benefits from Form 2441, line 26:</label>
+                            <input type="number" id="taxDepCare" placeholder= "0.00">
+                        </div>
+                        <div>
+                            <br>
+                            <label for="adoptBenefits">Employer-provided adoption benefits from Form 8839, line 29:</label>
+                            <input type="number" id="adoptBenefits" placeholder= "0.00">
+                        </div>
+                        <div>
+                            <br>
+                            <label for="wages">Wages from Form 8919, line 6:</label>
+                            <input type="number" id="wages" placeholder= "0.00">
+                        </div>
+                            <br>
+                            <label for="bIncomeDed">Qualified business income deduction from Form 8995 or Form 8995-A:</label>
+                            <input type="number" id="bIncomeDed" placeholder= "0.00">
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <div id="soloBtn">
+            <button onclick = "handleButtonClick()"id="nextButton">Finish</button>
+        </div><br>
+        </article>
+        <script>
+            //added by Paul Abruzzo 5/9/24
+            //gets the values from the input boxes on this html page and puts them to local storage, which other html file "outputs.html" takes and uses
+            document.addEventListener('DOMContentLoaded', function() {
+                const mnSSN = document.getElementById('mainSSN');
+                const spsSSN = document.getElementById('spouseSSN');
+                const totAmt = document.getElementById('totalAmount');
+                const houseWage = document.getElementById('nrWage');
+                const tipIncome = document.getElementById('nrTips');
+                const medicaid = document.getElementById('nrMedicare'); 
+                const taxInt = document.getElementById('taxInterest');
+                const ordDivdends = document.getElementById('dividends');
+                const taxIRA = document.getElementById('taxIRA');
+                const pensions = document.getElementById('taxPension');
+                const ssTax = document.getElementById('taxSS');
+                const userState = document.getElementById('state');
+                const single = document.getElementById('status');
+                const homeAddress = document.getElementById('address');
+                const cityorTown = document.getElementById('city');
+                const zipCode = document.getElementById('ZIP');
+                const firstName = document.getElementById('firstName');
+                const last = document.getElementById('lastName');
+                const additionalIncome = document.getElementById('additionalInc');
+                const adjustments = document.getElementById('adjustments');
+                const capGainOrLoss = document.getElementById('capGainLoss');
+                const foreign = document.getElementById('foreignEmpComp');
+                const taxableDependent = document.getElementById('taxDepCare')
+                const adoption = document.getElementById('adoptBenefits');
+                const wage = document.getElementById('wages');
+                const buisnessIncome = document.getElementById('bIncomeDed');
+                
+                
+                const nextButton = document.getElementById('nextButton');
+        
+                nextButton.addEventListener('click', function(e) {
+                    e.preventDefault();
+        
+                    const mnSSNVal = mnSSN.value;
+                    const spSSNVal = spsSSN.value;
+                    const totAmount = totAmt.value;
+                    const hsWage = houseWage.value; 
+                    const tipInc = tipIncome.value;
+                    const medWav = medicaid.value;
+                    const taxableInt = taxInt.value;
+                    const ordDiv = ordDivdends.value;
+                    const taxIRADist = taxIRA.value;
+                    const pens = pensions.value;
+                    const taxSocial = ssTax.value;
+                    const curState = userState.value;
+                    const singleStat = single.value;
+                    const homeAdd = homeAddress.value;
+                    const cityTown = cityorTown.value;
+                    const zip = zipCode.value;
+                    const firstNameMInt = firstName.value;
+                    const lastname = last.value;
+                    const additionalInco = additionalIncome.value;
+                    const adjust = adjustments.value;
+                    const capGOrL = capGainOrLoss.value;
+                    const foreignEmploy = foreign.value;
+                    const taxDep = taxableDependent.value;
+                    const adoptionBen = adoption.value;
+                    const wages = wage.value;
+                    const buisnessIncomeDed = buisnessIncome.value;
+                    
+                    localStorage.setItem('main-SSN', mnSSNVal);
+                    localStorage.setItem('spouse-SSN', spSSNVal);
+                    localStorage.setItem('total-amount', totAmount);
+                    localStorage.setItem('house-wage', hsWage);
+                    localStorage.setItem('tip-income', tipInc);
+                    localStorage.setItem('med-waiver', medWav);
+                    localStorage.setItem('taxable-interest', taxableInt);
+                    localStorage.setItem('ord-div', ordDiv);
+                    localStorage.setItem('tax-IRA', taxIRADist);
+                    localStorage.setItem('pensions', pens);
+                    localStorage.setItem('tax-ss', taxSocial);
+                    localStorage.setItem('state', curState);
+                    localStorage.setItem('singleStatus', singleStat);
+                    localStorage.setItem('homeAddress', homeAdd);
+                    localStorage.setItem('cityOrTown', cityTown);
+                    localStorage.setItem('setZipCode', zip);
+                    localStorage.setItem('firstNameMinitial', firstNameMInt);
+                    localStorage.setItem('lastNm', lastname);
+                    localStorage.setItem('addInc', additionalInco);
+                    localStorage.setItem('adjusts', adjust);
+                    localStorage.setItem('capGainOrLoss', capGOrL);
+                    localStorage.setItem('foreignEmp', foreignEmploy);
+                    localStorage.setItem('taxableDepCare', taxDep);
+                    localStorage.setItem('adoptionBenefits', adoptionBen);
+                    localStorage.setItem('wageBenefits', wages);
+                    localStorage.setItem('buisnessInc', buisnessIncomeDed);
+
+
+        
+                    // Optionally, redirect to another page after saving the value
+                    window.location.href = 'outputs.html';
+                });
+            });
+        </script>
+        
+    </main>
+
+
+    <footer>
+        <h2></h2>
+    </footer>
+    <script>
+        // Author: Elex Weisman; Date Modified: 05/19/2024 //
+        // Function add and remove sections of HTML //
+        
+        function toggleDropdown(element) {
+            var dropdown = element.parentNode;
+            dropdown.classList.toggle("active");
+        }
+        
+    </script>
+    <script src="taxable.js"></script>    
+    
+</body>
+</html>

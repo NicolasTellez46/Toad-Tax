@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tax Website</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img style = "float: left;" src="images/ToadTAX.JPG" height="75" width="100">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="BasicInfo.html">Calculate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+	    </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <article>
+            <h3>1099 Information</h3>
+         
+            <div>
+                <br>
+                <label for="taxInterest">Taxable interest from Form 1099:</label>
+                <input type="number" id="taxInterest" placeholder= "0.00" >
+            </div>
+            <div>
+                <br>
+                <label for="dividends">Ordinary dividends from Form 1099:</label>
+                <input type="number" id="dividends" placeholder= "0.00" >
+            </div>
+            <div>
+                <br>
+                <label for="taxIRA">Taxable amount of IRA Distributions from Form 1099:</label>
+                <input type="number" id="taxIRA" placeholder= "0.00" >
+            </div>
+            <div>
+                <br>
+                <label for="taxPension">Taxable amount of Pensions and annuities from Form 1099:</label>
+                <input type="number" id="taxPension" placeholder= "0.00" >
+                
+            </div>
+            <br>
+            <label for="taxSS">Taxable amount of social security benefits from Form SSA-1099 Box 3/4:</label>
+            <input type="number" id="taxSS" placeholder= "0.00" >
+            <br><br>
+            <div id="btnContainer">
+                <a href="W2Info.html">
+                    <button id="backButton">Back</button>
+                </a>
+                <a href="ScheduleInfo.html">
+                    <button id="nextButton">Next</button>
+                </a>
+            </div><br>
+        </article>
+
+
+    </main>
+
+
+    <footer>
+        <h2></h2>
+    </footer>
+    <script src="calculations.js"></script>
+    <script src="1099inputs.js"></script>
+
+
+
+
+
+</body>
+</html>

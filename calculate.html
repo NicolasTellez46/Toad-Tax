@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="calculations.js"></script>
+    <title>Tax Website</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img style = "float: left;" src="images/ToadTAX.JPG" height="75" width="100">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="BasicInfo.html">Calculate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+	    </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <h2>Welcome to the Taxable Income Calculation page!</h2>
+
+
+        <article>
+            <p>Taxable income is the amount of income subject to tax, after deductions and exemptions.<br>
+            Taxable income includes wages, salaries, bonuses, and tips, as well as investment income and various types of unearned income.<br>
+            Whichever forms you were given are the things you need to fill out. Dont worry about any forms you don't have.</p>
+            <br>
+
+
+            <div>
+                <label> Filing Status:</label>
+                <select id="filingStatus" required>
+                    <option label="Select one of the Following" disabled selected></option>
+                    <option value = "1" label="Single/Married Filing Seperately"></option>
+                    <option value = "2" label="Married Filing Jointly"></option>
+                    <option value = "3" label="Head of Household"></option>
+                </select>
+            </div>
+            <div>
+                <br>
+                <label for="totalAmount"> Total amount from Form(s) W-2, box 1:</label>
+                <input type="number" id="totalAmount" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="nrWage">Household employee wages not reported on Form(s) W-2:</label>
+                <input type="number" id="nrWage" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="nrTips">Tip income not reported on on Form(s) W-2:</label>
+                <input type="number" id="nrTips" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="nrMedicare">Medicaid waiver payments not reported on Form(s) W-2:</label>
+                <input type="number" id="nrMedicare" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="taxDepCare">Taxable dependent care benefits from Form 2441, line 26:</label>
+                <input type="number" id="taxDepCare" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="adoptBenefits">Employer-provided adoption benefits from Form 8839, line 29:</label>
+                <input type="number" id="adoptBenefits" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="wages">Wages from Form 8919, line 6:</label>
+                <input type="number" id="wages" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="foreignEmpComp">Other earned income and Foreign Employer Compensation:</label>
+                <input type="number" id="foreignEmpComp" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="taxInterest">Taxable interest from Form 1099:</label>
+                <input type="number" id="taxInterest" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="dividends">Ordinary dividends from Form 1099:</label>
+                <input type="number" id="dividends" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="taxIRA">Taxable amount of IRA Distributions from Form 1099:</label>
+                <input type="number" id="taxIRA" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="taxPension">Taxable amount of Pensions and annuities from Form 1099:</label>
+                <input type="number" id="taxPension" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="taxSS">Taxable amount of social security benefits from Form SSA-1099 Box 3/4:</label>
+                <input type="number" id="taxSS" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="capGainLoss">Capital Gain or loss (if stock or bond was sold):</label>
+                <input type="number" id="capGainLoss" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="additionalInc">Any additional income from Form Scedule 1, line 10:</label>
+                <input type="number" id="additionalInc" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="adjustments">Adjustments to income from Schedule 1, line 26:</label>
+                <input type="number" id="adjustments" placeholder= "0.00" required>
+            </div>
+            <div>
+                <br>
+            <br>
+            <button onclick="taxable_income()">Calculate</button>
+            <div id = "result"></div>
+           
+            <script src="taxable.js"></script>
+           
+        </article>
+
+
+    </main>
+
+
+    <footer>
+        <h2></h2>
+    </footer>
+
+
+
+
+
+
+</body>
+</html>

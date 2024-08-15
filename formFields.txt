@@ -1,0 +1,107 @@
+topmostSubform[0].Page1[0].f1_04[0] - First Name, Middle Initial
+topmostSubform[0].Page1[0].f1_05[0] - Last Name
+topmostSubform[0].Page1[0].f1_07[0] - Spouse's First Name, Middle Initial
+topmostSubform[0].Page1[0].f1_08[0] - Spouse's Last Name
+topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_10[0] - Address
+topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_12[0] - City/Town
+topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_13[0] - State
+topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_14[0] - ZIP Code
+topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_15[0] - Foreign Country Name
+topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_16[0] - Foreign Province/State
+topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_17[0] - Foreign Postal Code
+topmostSubform[0].Page1[0].c1_3[0] - Single Box (check only if single)
+topmostSubform[0].Page1[0].c1_3[2] - Married jointly filing Box (check only if married and jointly filing)
+topmostSubform[0].Page1[0].c1_3[3] - Married filing separately Box (check only if married and filing separately)
+topmostSubform[0].Page1[0].c1_3[1] - Head of Household Box
+topmostSubform[0].Page1[0].c1_3[4] - Qualifying surviving spouse
+topmostSubform[0].Page1[0].f1_18[0] - "If you checked the MFS box, enter the name of your spouse. If you checked the HOH or QSS box, enter the child’s name if the qualifying person is a child but not your dependent:"
+
+"Digital Assets Section"
+topmostSubform[0].Page1[0].c1_4[0] - Yes
+topmostSubform[0].Page1[0].c1_4[1] - No
+
+"Standard Deduction"
+topmostSubform[0].Page1[0].c1_5[0] - You as a dependent
+topmostSubform[0].Page1[0].c1_6[0] - Your spouse as a dependent
+topmostSubform[0].Page1[0].c1_7[0] - Spouse itemizes on a separate return or you were a dual-status alien
+
+"Age/Blindness"
+topmostSubform[0].Page1[0].c1_8[0] - Were born before 1/2/1959
+topmostSubform[0].Page1[0].c1_9[0] - Are blind
+topmostSubform[0].Page1[0].c1_10[0] - Spouse born before 1/2/1959
+topmostSubform[0].Page1[0].c1_11[0] - Spouse is blind
+
+"Income"
+topmostSubform[0].Page1[0].f1_31[0] - Total amount from W2 form - 1a
+topmostSubform[0].Page1[0].f1_32[0] - Household wages not reported on W2 - 1b
+topmostSubform[0].Page1[0].f1_33[0] - Tip income not reported on 1a - 1c
+topmostSubform[0].Page1[0].f1_34[0] - Medical Waiver format - 1d
+topmostSubform[0].Page1[0].f1_35[0] - Taxable care dependents - 1e
+topmostSubform[0].Page1[0].f1_36[0] - Employer provided adoption benefits - 1f
+topmostSubform[0].Page1[0].f1_37[0] - Wages from 8919 - 1g
+topmostSubform[0].Page1[0].f1_38[0] - Other earned income - 1h
+topmostSubform[0].Page1[0].f1_39[0] - Non-taxable election income
+topmostSubform[0].Page1[0].f1_40[0] - Add lines 1a - 1h
+topmostSubform[0].Page1[0].f1_41[0] - Tax Exempt Interest - 2a
+topmostSubform[0].Page1[0].f1_42[0] - Taxable Interest - 2b
+topmostSubform[0].Page1[0].f1_43[0] - Qualified dividends - 3a
+topmostSubform[0].Page1[0].f1_44[0] - Ordinary dividends - 3b
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_45[0] - IRA distributions - 4a
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_46[0] - Taxable Amount - 4b
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_47[0] - Pensions and Annuities - 5a
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_48[0] - Taxable Amount - 5b
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_49[0] - Social Security Benefits - 6a
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_50[0] - Taxable Amount - 6b
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].c1_21[0] - Check if using lump sum election method
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].c1_22[0] - Check if capital gain is not required
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_51[0] - Capital Gain
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_52[0] - Additional Income from Schedule 1, line 10
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_53[0] - Total Income
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_54[0] - Adjustments to income from Schedule 1, line 26
+topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_55[0] - Adjusted Gross Income
+topmostSubform[0].Page1[0].f1_56[0] - Standardized Deductions (Schedule A)
+topmostSubform[0].Page1[0].f1_57[0] - Qualified Business Income Deduction from Form 8895 or Form 8895-A
+topmostSubform[0].Page1[0].f1_58[0] - Add Standard Deduction and Qualified Business Deduction
+topmostSubform[0].Page1[0].f1_59[0] - Taxable Income (-0- if zero or less)
+
+"Tax"
+topmostSubform[0].Page2[0].c2_1[0] - Check if using Form 8814
+topmostSubform[0].Page2[0].c2_2[0] - Check if using Form 4972
+topmostSubform[0].Page2[0].c2_3[0] - Check if using other forms
+topmostSubform[0].Page2[0].f2_01[0] - Put form names
+topmostSubform[0].Page2[0].f2_02[0] - Tax amount (from previous forms?)
+topmostSubform[0].Page2[0].f2_03[0] - Amount from Schedule 2, line 3
+topmostSubform[0].Page2[0].f2_04[0] - Add Tax amount and amount from Schedule 2 - Line 18
+topmostSubform[0].Page2[0].f2_05[0] - Child tax credit or credit from other dependents
+topmostSubform[0].Page2[0].f2_06[0] - Amount from Schedule 3, line 8
+topmostSubform[0].Page2[0].f2_07[0] - Add child tax credit and amount from Schedule 3 - Line 21
+topmostSubform[0].Page2[0].f2_08[0] - Subtract line 21 and line 18 (-0- if zero or less) - Line 22
+topmostSubform[0].Page2[0].f2_09[0] - Other taxes (self employment tax) - Line 23
+topmostSubform[0].Page2[0].f2_10[0] - Add Line 22 and Line 23 - Total Tax - Line 24
+
+"Payments"
+topmostSubform[0].Page2[0].f2_11[0] - Federal Income Tax withheld from W2 - 25a
+topmostSubform[0].Page2[0].f2_12[0] - Federal Income Tax withheld from 1099  - 25b
+topmostSubform[0].Page2[0].f2_13[0] - " " " " " Other Forms - 25 c
+topmostSubform[0].Page2[0].f2_14[0] - Add 25a - 25c - 25d
+topmostSubform[0].Page2[0].f2_15[0] - 2023 estimated tax payments and amount applied from 2022 return - 26
+topmostSubform[0].Page2[0].f2_16[0] - Earned Income Credit - 27
+topmostSubform[0].Page2[0].f2_17[0] - Additional child tax credit from Schedule 8812 - 28
+topmostSubform[0].Page2[0].f2_18[0] - American opportunity credit from Form 8863 - 29
+topmostSubform[0].Page2[0].f2_20[0] - Amount from Schedule 3, line 15. - 31
+topmostSubform[0].Page2[0].f2_21[0] - Add 27, 28, 29, 31 (Total Other Payments) - 32
+topmostSubform[0].Page2[0].f2_22[0] - Add 25d, 26 and 32 (Total Payments) - 33
+
+"Refund"
+topmostSubform[0].Page2[0].f2_23[0] - line 33 > line 24 ? line 33 - line 24 : '' (Amount Overpaid) - 34 
+topmostSubform[0].Page2[0].c2_4[0] - Check if Form 8888 is attached.
+topmostSubform[0].Page2[0].f2_24[0] - Amount you want refunded
+topmostSubform[0].Page2[0].RoutingNo[0].f2_25[0] - Routing Number
+topmostSubform[0].Page2[0].c2_5[0] - Check if type is checking
+topmostSubform[0].Page2[0].c2_5[1] - Check if type is saving
+topmostSubform[0].Page2[0].AccountNo[0].f2_26[0] - Account Number
+topmostSubform[0].Page2[0].f2_27[0] - Amount you want applied to 2024 estimated tax
+
+"Amount you Owe"
+topmostSubform[0].Page2[0].f2_28[0] - Line 24 - Line 33 (Amount you owe)
+topmostSubform[0].Page2[0].f2_29[0] - Estimated Tax Penalty

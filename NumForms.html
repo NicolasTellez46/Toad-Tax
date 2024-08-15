@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="calculations.js"></script>
+    <title>Tax Website</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img style = "float: left;" src="images/ToadTAX.JPG" height="75" width="100">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="BasicInfo.html">Calculate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+	    </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <article>
+            <h3>Numbered Forms Information</h3>
+        <div>
+            <label for="taxDepCare">Taxable dependent care benefits from Form 2441, line 26:</label>
+            <input type="number" id="taxDepCare" placeholder= "0.00">
+        </div>
+        <div>
+            <br>
+            <label for="adoptBenefits">Employer-provided adoption benefits from Form 8839, line 29:</label>
+            <input type="number" id="adoptBenefits" placeholder= "0.00">
+        </div>
+        <div>
+            <br>
+            <label for="wages">Wages from Form 8919, line 6:</label>
+            <input type="number" id="wages" placeholder= "0.00">
+        </div>
+        <br>
+            <label for="bIncomeDed">Qualified business income deduction from Form 8995 or Form 8995-A:</label>
+            <input type="number" id="bIncomeDed" placeholder= "0.00">
+        </div>
+        <br><br>
+        <div id="btnContainer">
+            <a href="ScheduleInfo.html">
+                <button id="backButton">Back</button>
+            </a>
+            <a href="outputs.html">
+                <button id="nextButton">Finish</button>
+            </a>
+
+        </div><br>
+        </article>
+
+
+    </main>
+
+
+    <footer>
+        <h2></h2>
+    </footer>
+
+
+
+
+
+
+</body>
+</html>

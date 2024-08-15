@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tax Website</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img style = "float: left;" src="images/ToadTAX.JPG" height="75" width="100">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="BasicInfo.html">Calculate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+	    </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <article>
+            <h3>Schedule Information</h3>
+         
+            <div>
+                <label for="additionalInc">Any additional income from Form Scedule 1, line 10:</label>
+                <input type="number" id="additionalInc" placeholder= "0.00">
+            </div>
+            <div>
+                <br>
+                <label for="adjustments">Adjustments to income from Schedule 1, line 26:</label>
+                <input type="number" id="adjustments" placeholder= "0.00">
+            </div>
+
+            <h3>Other Information</h3>
+            <div>
+                <label for="capGainLoss">Capital Gain or loss (if stock or bond was sold):</label>
+                <input type="number" id="capGainLoss" placeholder= "0.00">
+            </div>
+            <div>
+                <br>
+                <label for="foreignEmpComp">Other earned income and Foreign Employer Compensation:</label>
+                <input type="number" id="foreignEmpComp" placeholder= "0.00">
+            </div>
+            <br>
+            <div id="btnContainer">
+                <a href="1099Info.html">
+                    <button id="backButton">Back</button>
+                </a>
+                <a href="NumForms.html">
+                    <button id="nextButton">Next</button>
+                </a>
+            </div><br>
+            </article>
+        </article>
+
+
+    </main>
+
+
+    <footer>
+        <h2></h2>
+    </footer>
+    <script src="scheduleinputs.js"></script>
+    <script src="calculations.js"></script>
+    
+
+
+
+
+</body>
+</html>

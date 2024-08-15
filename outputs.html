@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://unpkg.com/pdf-lib@1.11.0"></script>     
+    <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Tax Website</title>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img style="float: left;" src="images/ToadTAX.JPG" height="75" width="100">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="BasicInfo.html">Calculate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <main>
+        <h3>
+            Congratulations!<br>You have successfully filled out your 1040
+        </h3>
+        <article>
+            <h4>Information to take note of</h4>
+            <p> <!--Added outputts and linked script-->
+                <div>
+                    Total Income:
+                    <span id="grossIncome"></span>
+                </div>
+                <div>
+                    Adjusted Gross Income:
+                    <span id="adjustedGrossIncome"></span>
+                </div>
+                <div>
+                    Taxable Income:
+                    <span id="taxableIncome"></span>
+                </div>
+                <!--
+                <div>
+                    Amount Owed:
+                    <span id="amountOwed"></span>
+                </div>
+                <div>
+                    Amount Refunded:
+                    <span id="amountRefunded"></span>
+                </div>
+
+                <div>
+                  Line24:
+                  <span id="line24"></span>
+              </div>-->
+
+                
+
+                <script>
+                  window.onload = function() {
+                    var grossIncome = sessionStorage.getItem("grossIncome");
+                    var taxableIncome = sessionStorage.getItem("taxableIncome");
+                    var adjustedGrossIncome = sessionStorage.getItem("adjustedGrossIncome")
+                    var amountOwed = sessionStorage.getItem("amountOwed");
+                    var amountRefunded = sessionStorage.getItem("amountRefunded")
+
+                      document.getElementById("grossIncome").innerText = parseFloat(grossIncome).toLocaleString('en-US', {
+                          style: 'currency',
+                          currency: 'USD'
+                      });
+                                        document.getElementById("adjustedGrossIncome").innerText = parseFloat(adjustedGrossIncome).toLocaleString('en-US', {
+                          style: 'currency',
+                          currency: 'USD'
+                      });
+                                        document.getElementById("taxableIncome").innerText = parseFloat(taxableIncome).toLocaleString('en-US', {
+                          style: 'currency',
+                          currency: 'USD'
+                      });
+                                        document.getElementById("amountOwed").innerText = parseFloat(amountOwed).toLocaleString('en-US', {
+                          style: 'currency',
+                          currency: 'USD'
+                      });
+                                        document.getElementById("amountRefunded").innerText = parseFloat(amountRefunded).toLocaleString('en-US', {
+                          style: 'currency',
+                          currency: 'USD'
+                      });
+
+
+                      var line33 = sessionStorage.getItem("lin33");
+                  }
+              </script>
+            </p>
+            
+        </article>
+
+        <div id="soloDBtn">
+            <button onclick="fillForm()" id="btnDownload">Download Form 1040</button>
+        </div>
+        <h6>
+            Please do not use this website to actually file taxes! This was made by college students and could contain errors!
+        </h6>
+    </main>
+
+    <footer>
+        <h2></h2>
+    </footer>
+
+    <script src="taxable.js"></script>
+    <script src="inputs.js"></script>
+    <script src="w2inputs.js"></script>
+    <script src="1099inputs.js"></script>
+    <script src="scheduleinputs.js"></script>
+    <script src="numformsinputs.js"></script>   
+
+    <script>
+         //Call taxable_income function when the DOM content (Page) is loaded
+        document.addEventListener("DOMContentLoaded", function() {
+            // Call the taxable_income function to calculate taxable income
+            taxable_income();
+            
+
+            // Get the calculated taxable income and print it to screen
+            var taxableIncomeSpan = document.getElementById("taxableIncome");
+            taxableIncomeSpan.innerHTML = "$" + sessionStorage.getItem("taxableIncome");
+        });
+    </script>
+
+
+<script>
+    const { PDFDocument } = PDFLib;
+    localStorage.getItem('')
+    async function fillForm() {
+    	// Fetch the PDF with form fields
+      const formUrl = './f1040.pdf'
+      const formPdfBytes = await fetch(formUrl, {mode:"same-origin"}).then(res => res.arrayBuffer());
+      let newBytes = new Uint8Array(formPdfBytes);
+      console.log(newBytes);
+      
+      const pdfDoc = await PDFDocument.load(newBytes)
+      
+
+      // Get the form containing all the fields
+      const form = pdfDoc.getForm()
+      //added by Paul Abruzzo on 5/2/24
+      //sets all variables to the text boxes in pdf file
+      const ssnField = form.getTextField('topmostSubform[0].Page1[0].f1_06[0]')
+      const firstNameMidInt = form.getTextField('topmostSubform[0].Page1[0].f1_04[0]')
+      const lastName = form.getTextField('topmostSubform[0].Page1[0].f1_05[0]')
+      const spouseFirMInt = form.getTextField('topmostSubform[0].Page1[0].f1_07[0]')
+      const spouseLast = form.getTextField('topmostSubform[0].Page1[0].f1_08[0]')
+      const spouseSSN = form.getTextField('topmostSubform[0].Page1[0].f1_09[0]')
+      
+      const address = form.getTextField('topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_10[0]')
+      const cityTown = form.getTextField('topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_12[0]')
+      const state = form.getTextField('topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_13[0]')
+      const zipCode = form.getTextField('topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_14[0]')
+      const foreignCountryName = form.getTextField('topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_15[0]')
+      const foreignState = form.getTextField('topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_16[0]')
+      const foreignPostCode = form.getTextField('topmostSubform[0].Page1[0].Address_ReadOrder[0].f1_17[0]')
+      const single = form.getCheckBox('topmostSubform[0].Page1[0].c1_3[0]')
+      const taxableIncomeLine15 = form.getTextField('topmostSubform[0].Page1[0].f1_59[0]')
+      
+      //form.check() to check a box later in code
+      const married = form.getCheckBox('topmostSubform[0].Page1[0].c1_3[2]')
+      const marriedSep = form.getCheckBox('topmostSubform[0].Page1[0].c1_3[3]')
+      const headOfHouse = form.getCheckBox('topmostSubform[0].Page1[0].c1_3[1]')
+      const qualifyingSpouse = form.getCheckBox('topmostSubform[0].Page1[0].c1_3[4]')
+      const w2Total = form.getTextField('topmostSubform[0].Page1[0].f1_31[0]')
+      const houseNotReportW2 = form.getTextField('topmostSubform[0].Page1[0].f1_32[0]')
+      const tipNotReported = form.getTextField('topmostSubform[0].Page1[0].f1_33[0]')
+      const medWaiver = form.getTextField('topmostSubform[0].Page1[0].f1_34[0]')
+      const taxableInterst = form.getTextField('topmostSubform[0].Page1[0].f1_42[0]')
+      const ordinaryDividends = form.getTextField('topmostSubform[0].Page1[0].f1_44[0]')
+      const taxableIRADist = form.getTextField('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_46[0]')
+      const taxablePensionsAndAnnuities = form.getTextField('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_48[0]')
+      const taxableSSBenfits = form.getTextField('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_50[0]')
+      const addIncomeSchedule1Ln10 = form.getTextField('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_52[0]')
+      const addIncomeSchedule1Ln26 = form.getTextField('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_54[0]')
+      const grossIncome = form.getTextField('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_53[0]')
+      const capitalGainOrLoss = form.getTextField('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_51[0]')
+      const checkIfCapitalGainOrLoss = form.getCheckBox('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].c1_22[0]')
+      const otherEarned = form.getTextField('topmostSubform[0].Page1[0].f1_38[0]')
+      const line26 = form.getTextField('topmostSubform[0].Page2[0].f2_15[0]')
+      const adoptionBenfits = form.getTextField('topmostSubform[0].Page1[0].f1_36[0]')
+      const wagesForm8919 = form.getTextField('topmostSubform[0].Page1[0].f1_37[0]')
+      const buisnessIncomeDeduction = form.getTextField('topmostSubform[0].Page1[0].f1_57[0]')
+      const adjustedGrossIncome = form.getTextField('topmostSubform[0].Page1[0].Line4a-11_ReadOrder[0].f1_55[0]')
+      const taxableIncome = form.getTextField('topmostSubform[0].Page1[0].f1_59[0]')
+      const totalPayments = form.getTextField('topmostSubform[0].Page2[0].f2_22[0]')
+      const amountOwed = form.getTextField('topmostSubform[0].Page2[0].f2_28[0]')
+      const amountRefunded = form.getTextField('topmostSubform[0].Page2[0].f2_24[0]')
+      
+    
+
+      
+      // Fill in the basic info fields
+      //added by Paul Abruzzo on 5/9/24
+      ssnField.setText(localStorage.getItem('main-SSN'))
+      //need to find spouse ssn box name
+      w2Total.setText(localStorage.getItem('total-amount'))
+      houseNotReportW2.setText(localStorage.getItem('house-wage'))
+      tipNotReported.setText(localStorage.getItem('tip-income')) // Fixed by Michael, 5/9/24
+      medWaiver.setText(localStorage.getItem('med-waiver')) // Fixed by Michael, 5/9/24
+      taxableInterst.setText(localStorage.getItem('taxable-interest')) // Fixed by Michael, 5/9/24
+      ordinaryDividends.setText(localStorage.getItem('ord-div')) // Fixed by Michael, 5/9/24
+      taxableIRADist.setText(localStorage.getItem('tax-IRA')) 
+      taxablePensionsAndAnnuities.setText(localStorage.getItem('pensions')) 
+      taxableSSBenfits.setText(localStorage.getItem('tax-ss'))
+      state.setText(localStorage.getItem('state'));
+      // Additional Code by Michael, 5/9/24
+      grossIncome.setText(sessionStorage.getItem('grossIncome'))
+      adjustedGrossIncome.setText(sessionStorage.getItem('adjustedGrossIncome'))
+      taxableIncome.setText(sessionStorage.getItem('taxableIncome'))
+      if (localStorage.getItem('singleStatus') == 'Single') {
+        single.check();
+      } else if (localStorage.getItem('singleStatus') == 'Head of Household') {
+        headOfHouse.check();
+      } else if (localStorage.getItem('singleStatus') == 'Married Filing Seperately') {
+        marriedSep.check();
+      } else if (localStorage.getItem('singleStatus') == 'Married Filing Jointly') {
+        married.check();
+      } else if (localStorage.getItem('singleStatus') == 'Qualifying Surviving Spouse') {
+        qualifyingSpouse.check();
+      }
+      address.setText(localStorage.getItem('homeAddress'));
+      cityTown.setText(localStorage.getItem('cityOrTown'));
+      zipCode.setText(localStorage.getItem('setZipCode'));
+      firstNameMidInt.setText(localStorage.getItem('firstNameMinitial'));
+      lastName.setText(localStorage.getItem('lastNm'));
+      addIncomeSchedule1Ln10.setText(localStorage.getItem('addInc'));
+      addIncomeSchedule1Ln26.setText(localStorage.getItem('adjusts'));
+      capitalGainOrLoss.setText(localStorage.getItem('capGainOrLoss'));
+      otherEarned.setText(localStorage.getItem('foreignEmp'));
+      line26.setText(localStorage.getItem('taxableDepCare'));
+      adoptionBenfits.setText(localStorage.getItem('adoptionBenefits'));
+      wagesForm8919.setText(localStorage.getItem('wageBenefits'));
+      buisnessIncomeDeduction.setText(localStorage.getItem('buisnessInc'));
+      spouseSSN.setText(localStorage.getItem('spouse-SSN'));
+      if (taxableIncomeLine15.getText() == '0'){
+        taxableIncomeLine15.setText('-0-');
+      }
+
+
+
+
+
+
+
+      
+      //totalPayments.setText(sessionStorage.getItem('line33'))
+      //amountOwed.setText(sessionStorage.getItem('amountOwed'))
+      //amountRefunded.setText(sessionStorage.getItem('amountRefunded'))
+      
+
+      
+      
+      const pdfBytes = await pdfDoc.save()
+
+			// Trigger the browser to download the PDF document
+      download(pdfBytes, "Your Tax Form.pdf", "application/pdf");
+    }
+  </script>
+</body>
+</html>

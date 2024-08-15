@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Tax Website</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <img style="float: left;" src="images/ToadTAX.JPG" height="75" width="100">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="process.html">Our Process</a></li>
+                <li><a href="BasicInfo.html">Calculate</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <article>
+            <h3>W-2 Information</h3>
+
+            <div>
+                <br>
+                <label for="totalAmount"> Total amount from Form(s) W-2, box 1:</label>
+                <input type="number" id="totalAmount" placeholder="0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="nrWage">Household employee wages not reported on Form(s) W-2:</label>
+                <input type="number" id="nrWage" placeholder="0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="nrTips">Tip income not reported on on Form(s) W-2:</label>
+                <input type="number" id="nrTips" placeholder="0.00" required>
+            </div>
+            <div>
+                <br>
+                <label for="nrMedicare">Medicaid waiver payments not reported on Form(s) W-2:</label>
+                <input type="number" id="nrMedicare" placeholder="0.00" required>
+            </div><br>
+            <div id="btnContainer">
+                <a href="BasicInfo.html">
+                    <button id="backButton">Back</button>
+                </a>
+                <a href="1099Info.html">
+                    <button id="nextButton">Next</button>
+                </a>
+            </div><br>
+        </article>
+
+
+    </main>
+    <footer>
+        <h2></h2>
+    </footer>
+
+    <script src="w2inputs.js"></script>
+    <script src="calculations.js"></script>
+</body>
+
+</html>
